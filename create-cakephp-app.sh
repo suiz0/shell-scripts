@@ -3,13 +3,20 @@
 # Usage
 usage() {
     echo "Usage: \r"
-    echo "create-cake-project <project_path> [version]"
+    echo "create-cake-project <project_path> [cakephp_version]"
 }
 
 if [ $# -lt 1 ]; then
     usage
     exit 1
-fi 
+fi
+
+if ! command -v composer &> /dev/null
+then
+    echo "composer is not installed. Install composer and try again..."
+    exit 1
+fi
+
 
 PROJECT_PATH=$1
 DIR_PATH=$(dirname $PROJECT_PATH)
