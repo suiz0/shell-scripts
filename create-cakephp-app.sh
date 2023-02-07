@@ -13,7 +13,7 @@ fi
 
 if ! command -v composer &> /dev/null
 then
-    echo "composer is not installed. Install composer and try again..."
+    echo "composer is not installed or is not available in PATH. Install composer and try again..."
     exit 1
 fi
 
